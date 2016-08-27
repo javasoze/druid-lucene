@@ -1,0 +1,8 @@
+{
+  "queryType" : "lucene",
+  "dataSource" : "lucene",
+  "intervals" : "2000/2002",
+  "count" : 10,
+  "defaultField" : "text",
+  "query" : "hello"
+}
