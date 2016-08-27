@@ -263,12 +263,14 @@ public class LuceneDruidSegment implements Segment
       isOpen = false;
       try
       {
-        if (ramWriter.numDocs() > 0)
-        {
-          persist();
+        if (ramWriter != null) {
+          if (ramWriter.numDocs() > 0)
+          {
+            persist();
+          }
+          ramWriter.close();
+          ramWriter = null;
         }
-        ramWriter.close();
-        ramWriter = null;
         if (realtimeReader != null)
         {
           realtimeReader.close();
